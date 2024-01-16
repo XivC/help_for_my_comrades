@@ -20,7 +20,7 @@ class AnswerVariant(models.Model):
 class Test(models.Model):
 
     name = models.CharField(max_length=64)
-    tasks = models.ManyToManyField('tests.Task')
+    tasks = models.ManyToManyField('tests.Task', related_name='tests')
 
 
 

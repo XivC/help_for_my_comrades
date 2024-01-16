@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'tests',
     'rest_framework',
     'drf_spectacular',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,9 @@ AUTH_USER_MODEL = "users.User"
 
 
 REST_FRAMEWORK = {
-    # ВАШИ НАСТРОЙКИ
+
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
 }
